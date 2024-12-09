@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Home from "./Pages";
 import Watchmen from "./Pages/watchmen";
 import Header from "./Components/Header";

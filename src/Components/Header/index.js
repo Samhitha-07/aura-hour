@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch, FaUser, FaShoppingCart, FaChevronDown } from "react-icons/fa";
+import { FaUser, FaShoppingCart, FaChevronDown } from "react-icons/fa";
 import SearchBox from "./SearchBox/Index"; // Corrected import
 
 const Header = () => {
