@@ -9,6 +9,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Inconsolata:wdth,wght@112.5,200..900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
 body {
   font-family: "Inconsolata", monospace;
@@ -112,6 +113,13 @@ body {
 }
 
 .logo h3{
+  font-family: "Allura", cursive;
+  font-size: 40px;
+  text-align: center;
+  margin: 0px;
+}
+
+.logo h2{
   font-family: "Allura", cursive;
   font-size: 50px;
   text-align: center;
@@ -341,6 +349,7 @@ body {
 .homeProducts {
   padding: 15px 45px; /* Remove all padding for the section */
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .homeProducts .row {
@@ -549,3 +558,169 @@ body {
 }
 
 
+.newsLetterSection {
+  width: 100%;
+  height: 420px;
+  background: #dfd6c7;
+  padding-top:  20px !important;
+  padding: 10px;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+.left-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the start of the column */
+  width: 60%; /* Adjust width as needed */
+  padding: 20px; /* Add a small padding to the left edge */
+  margin-left: -150px; /* Move the entire column leftwards */
+  gap: 40px;
+}
+
+
+.left-column h5 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+}
+
+.left-column ul {
+  display: flex; /* Use flexbox for horizontal layout */
+  flex-direction: column;
+  flex-wrap: nowrap; /* Prevent wrapping to the next line */
+  gap: 10px; /* Add spacing between items */
+  padding: 0; /* Remove extra padding */
+}
+
+.left-column ul li {
+  list-style: none;
+  font-size: 19px;
+}
+
+
+.left-column ul li a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.left-column ul li a:hover {
+  color: #000;
+}
+
+.right-column {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom:10px;
+  margin-right: -100px;
+
+}
+
+.right-column h5{
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+}
+
+.right-column p{
+  padding-top: 10px;
+  font-size: 19px;
+  padding-bottom: 10px;
+  color: #555;
+}
+
+.Mail {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  align-items: center; /* Aligns input and button vertically */
+  width: 100%;
+  border-bottom: 2px solid silver; /* Single border for both input and button */
+  background: #dfd6c7; /* Matches the background of the input */
+}
+
+.form-control {
+  flex: 1; /* Allows input to take up the remaining space */
+  padding: 10px;
+  font-size: 18px;
+  border: none; /* Removes default border */
+  outline: none; /* Removes focus outline */
+}
+
+.form-control:focus {
+  outline: none; /* Removes focus border */
+}
+
+.btn-primary {
+  height: 35px;
+  width: 70px;
+  background-color: #5a4a3c;
+  color: #fff;
+  border: none;
+  border-radius: 0; /* Matches the input style */
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+.btn-primary:hover {
+  background-color: #3e2e25;
+}
+
+
+.right-column .social-icons {
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.right-column .social-icons div {
+  display: flex;
+  gap: 15px;
+}
+
+.right-column .social-icons a {
+  color: #555;
+  font-size: 28px;
+  transition: color 0.3s ease;
+}
+
+.right-column .social-icons a:hover {
+  color: #000;
+}
+
+.right-column .app-links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.right-column .app-links img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.right-column .app-links img:hover {
+  transform: scale(1.05);
+}
+
+.copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #555;
+}
+
+.copyright p{
+  font-family: "Allura", cursive; ;
+  font-size: 30px;
+  line-height:80% ;
+}
