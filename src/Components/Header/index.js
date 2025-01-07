@@ -10,9 +10,6 @@ const Header = () => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
-  const addToCart = () => {
-    setCartCount(cartCount + 1); // Increment cart count when called
-  };
 
   return (
     <div className="headerWrapper">
@@ -68,11 +65,8 @@ const Header = () => {
           </div>
 
           {/* Cart Icon Section */}
-          <div className="icon-btn cart" onClick={addToCart} style={{ position: "relative" }}>
+          <div className="icon-btn cart" style={{ position: "relative" }}>
             <FaShoppingCart className="cart-icon" />
-            {cartCount > 0 && (
-              <span className="cart-count">{cartCount}</span>
-            )}
             <div className="icon-text">
                 <a href="/cart" >Cart</a>
             </div>
