@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import { IoMdHeart } from "react-icons/io";
 import { IoAddOutline } from "react-icons/io5";
 import ProductModal from "../ProductModal";
-
+import "./ProductItem.css";
 const ProductItem = ({ image, badgeText, productName, productDescription, price, originalPrice }) => {
   // State to track if heart is clicked
   const [isHeartClicked, setIsHeartClicked] = useState(false);
@@ -51,7 +51,7 @@ const ProductItem = ({ image, badgeText, productName, productDescription, price,
       </div>
 
       {
-         isOpenProductModal==true && <ProductModal closeProductModal={closeProductModal}/>
+         isOpenProductModal===true && <ProductModal closeProductModal={closeProductModal}/>
 
       }
       {/*<ProductModal/>*/}

@@ -1,0 +1,106 @@
+.posters-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  overflow: hidden; /* Prevent body scroll if container leaks */
+}
+
+.posters-container {
+  display: flex;
+  gap: clamp(10px, 1.5vw, 20px);
+  width: 100%;
+  /* Removed max-width so posters stretch infinitely to fill screen on zoom */
+  padding: 20px clamp(15px, 3vw, 40px); /* Padding for hover shadow clearance */
+  
+  /* Horizontal Scrolling Configuration */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Smooth iOS scroll */
+  
+  /* Hide scrollbar for clean UX */
+  scrollbar-width: none; /* Firefox */
+}
+
+.posters-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.poster {
+  position: relative;
+  flex: 0 0 auto; /* Do not shrink below min-width */
+  
+  /* Dynamic Width: Exactly 5 columns on desktop */
+  width: calc((100% - (4 * clamp(10px, 1.5vw, 20px))) / 5);
+  
+  /* Trigger horizontal scroll when width drops below 280px (Laptops/Tablets/Mobile) */
+  min-width: 280px; 
+  
+  /* Dynamic Height: Based on width instead of fixed 600px */
+  aspect-ratio: 9 / 16;
+  
+  border-radius: 8px;
+  overflow: hidden;
+  scroll-snap-align: center; /* Center active poster on mobile */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.poster:hover {
+  transform: scale(1.04); /* Slightly less aggressive scale so it doesn't clip */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.shop-now-btn {
+  position: absolute;
+  bottom: 25%; /* Shifted higher up the poster */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d68651 !important;
+  opacity: 0;
+  height: clamp(50px, 5vw, 65px);
+  width: clamp(120px, 12vw, 150px);
+  color: black !important;
+  font-size: clamp(14px, 1.2vw + 4px, 18px) !important;
+  font-weight: 500 !important;
+  padding: 10px 20px;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  pointer-events: none;
+}
+
+/* Force button to show on mobile (since hover doesn't exist on touch devices) */
+@media screen and (max-width: 900px) {
+  .shop-now-btn {
+    opacity: 0.9;
+    pointer-events: auto;
+    bottom: 20%; /* Shifted higher */
+  }
+}
+
+/* Mobile poster sizing - show exactly two posters */
+@media screen and (max-width: 600px) {
+  .posters-section {
+    margin-top: -5px; /* Reduce gap between banner and poster */
+  }
+  .poster {
+    min-width: calc(50vw - 25px); /* Exactly two posters at once without peeking */
+  }
+}
+
+.poster:hover .shop-now-btn {
+  opacity: 0.9; /* Slightly transparent */
+  pointer-events: auto;
+}
+
+.shop-now-btn:hover {
+  background-color: white !important;
+  color: black !important;
+}

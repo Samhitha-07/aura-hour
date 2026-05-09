@@ -1,0 +1,60 @@
+.homeProducts {
+  padding: 20px clamp(15px, 3vw, 45px); /* Matches poster container padding perfectly */
+  width: 100%;
+  margin-bottom: clamp(30px, 5vw, 50px);
+}
+
+.homeProducts .row {
+  margin-bottom: 0; /* Remove any margin on the row */
+}
+
+.header-row {
+  margin-bottom: 10px; /* Adjust the margin between the header and products */
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between; /* Push "ESSENTIALS" and "View all" to the two ends */
+  align-items: center; /* Vertically center the elements */
+  margin: 0; /* Remove any margins */
+}
+
+.hd {
+  font-size: clamp(22px, 4vw + 5px, 39px); /* Fluid font size matching mobile */
+  font-weight: 400;
+  margin: 0; /* Ensure no extra space around the heading */
+}
+
+.viewAll-btn {
+  font-size: clamp(10px, 1.5vw + 2px, 12px); /* Fluid font size */
+  padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 15px) !important; /* Fluid padding */
+  background: black !important; /* Button background */
+  color: white !important;
+  font-weight: 500;
+  border: 1px solid black !important; /* Button border */
+  display: inline-flex; /* Center icon and text inline */
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal alignment */
+  gap: 5px; /* Space between text and icon */
+  text-transform: capitalize; /* Prevent uppercase text */
+}
+
+.divider {
+  border: none; /* Remove default hr border */
+  border-top: 1px solid #ddd; /* Thin line */
+  margin: 10px 0; /* Allow you to add margins later */
+  padding: 10px;
+}
+
+/* Fluid responsive grid for products section */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 20vw, 250px), 1fr));
+  gap: clamp(10px, 2vw, 20px);
+  width: 100%;
+}
+
+.product-grid .productItem {
+  margin: 0 !important; /* Let the grid gap handle spacing */
+  width: 100% !important;
+}

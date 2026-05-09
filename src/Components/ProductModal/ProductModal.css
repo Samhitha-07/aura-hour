@@ -1,0 +1,22 @@
+.close_ {
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  color: #000 !important;
+  min-width: auto !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}
+
+.close_ svg {
+  font-size: 22px;
+}
+
+.productModal.MuiPaper-elevation{
+  padding: 25px;
+  position: relative;
+  max-width: "sm";
+  
+
+}

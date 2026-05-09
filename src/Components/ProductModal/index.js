@@ -1,7 +1,7 @@
 import React from "react";
 import { Dialog,Button } from "@mui/material";
 import { MdClose } from "react-icons/md";
-
+import "./ProductModal.css";
 const ProductModal = (props) => {
 
   return (

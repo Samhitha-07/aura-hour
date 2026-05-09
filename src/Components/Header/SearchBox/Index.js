@@ -1,11 +1,11 @@
 
-import { FaSearch } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
 
 const SearchBox=()=>{
     return(
         <div className="icon-btn search">
             <input type="text" placeholder="Search" />
-            <FaSearch /> {/* Search Icon */}
+            <FiSearch /> {/* Search Icon */}
             <span className="icon-text"></span>
         </div>
     )

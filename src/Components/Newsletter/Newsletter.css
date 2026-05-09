@@ -1,0 +1,186 @@
+/* Newsletter Section Container */
+/* Newsletter Section Container */
+.newsLetterSection {
+  width: 100%;
+  height: auto;
+  background: #dfd6c7;
+  /* Top padding, Left/Right padding, Bottom padding = 10px to remove empty space */
+  padding: clamp(30px, 5vw, 60px) clamp(20px, 4vw, 80px) 10px clamp(20px, 4vw, 80px);
+  margin-bottom: 0 !important;
+  overflow: hidden; /* Prevents margin collapsing and float issues */
+}
+
+.newsLetterSection .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 0 !important;
+}
+
+/* Main Two-Column Grid */
+.newsLetterSection .row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: clamp(30px, 5vw, 80px);
+}
+
+/* Left Column: 3-column Grid for Links */
+.left-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  align-items: start;
+}
+
+.left-column h5, 
+.right-column h5 {
+  font-size: clamp(18px, 1.5vw + 4px, 22px);
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.left-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.left-column ul li {
+  list-style: none;
+}
+
+.left-column ul li a {
+  text-decoration: none;
+  color: #555;
+  font-size: clamp(14px, 1.1vw + 2px, 18px); /* Standard fluid typography */
+  transition: color 0.3s ease;
+}
+
+.left-column ul li a:hover {
+  color: #000;
+}
+
+/* Right Column: Newsletter Form & Socials */
+.right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-column p {
+  font-size: clamp(14px, 1.1vw + 2px, 18px);
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.Mail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.input-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border-bottom: 2px solid silver;
+  background: transparent;
+}
+
+.form-control {
+  flex: 1;
+  padding: 10px 10px 10px 0;
+  font-size: clamp(14px, 1.1vw + 2px, 18px);
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #000;
+}
+
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+  width: clamp(70px, 6vw, 100px);
+  background-color: #5a4a3c;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-size: clamp(14px, 1.1vw + 2px, 18px);
+  cursor: pointer;
+  margin-left: 10px; /* Slight gap between text and join button */
+}
+
+.btn-primary:hover {
+  background-color: #3e2e25;
+}
+
+/* Social Icons */
+.right-column .social-icons h5 {
+  margin-bottom: 15px;
+}
+
+.right-column .social-icons div {
+  display: flex;
+  gap: clamp(15px, 2vw, 25px);
+  flex-wrap: wrap;
+}
+
+.right-column .social-icons a {
+  color: #555;
+  font-size: clamp(22px, 2vw + 6px, 28px); /* Social icon scaling */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.right-column .social-icons a:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Copyright */
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  margin-top: clamp(30px, 4vw, 50px);
+  padding-top: 10px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.copyright p {
+  font-family: "Allura", cursive;
+  font-size: clamp(24px, 2.5vw + 10px, 36px); /* Same scaling as aura & hour logo */
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1; /* Eliminates invisible text-box height expanding downwards */
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1024px) {
+  .newsLetterSection .row {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .right-column {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .left-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .left-column {
+    grid-template-columns: 1fr; /* Stacks lists vertically */
+    gap: 30px;
+  }
+}

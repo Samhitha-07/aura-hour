@@ -1,0 +1,358 @@
+.headerWrapper .top-strip {
+  padding: 8px 0px;
+  text-align: center;
+  color: #000;
+  background: #dfd6c7;
+}
+
+.headerWrapper .top-strip p {
+  margin: 0;
+  font-size: clamp(12px, 1vw + 4px, 16px);
+}
+
+/* Navigation Bar using CSS Grid */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: clamp(5px, 1vw, 15px) clamp(20px, 3vw, 50px);
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: clamp(14px, 1.1vw + 2px, 18px);
+  /* Matched to other icons */
+  cursor: pointer;
+  color: #444;
+  /* Match color of other icons */
+  padding: 10px;
+  /* Kept large for tap target */
+  margin-left: -10px;
+  /* Offset padding to align with edge */
+}
+
+.nav-links {
+  display: contents;
+  /* Desktop: let children behave as grid items */
+}
+
+/* Left Section: Menu Items using Flexbox */
+.menu-items {
+  display: flex;
+  gap: clamp(20px, 3vw, 50px);
+  align-items: center;
+  justify-self: start;
+  order: 1;
+}
+
+.menu-items .dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  font-size: clamp(16px, 1.2vw + 4px, 22px);
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown .dropbtn a {
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-icon {
+  margin-left: 6px;
+  font-size: clamp(14px, 1.1vw + 2px, 18px);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 180px;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #000;
+  font-size: clamp(14px, 1vw + 4px, 18px);
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #e6d2c4;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content.show {
+  display: block;
+}
+
+/* Center Section: Logo */
+.logo {
+  justify-self: center;
+  text-align: center;
+  order: 2;
+}
+
+.logo h3 {
+  font-family: "Allura", cursive;
+  font-size: clamp(28px, 2.5vw + 10px, 45px);
+  margin: 0px;
+}
+
+.logo h2 {
+  font-family: "Allura", cursive;
+  font-size: clamp(36px, 3vw + 10px, 55px);
+  margin: 0px;
+}
+
+/* Right Section: Icons using Flexbox */
+.icons {
+  display: flex;
+  gap: clamp(20px, 3vw, 50px);
+  align-items: center;
+  justify-self: end;
+  order: 3;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: clamp(16px, 1.2vw + 4px, 22px);
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+  gap: 1px;
+}
+
+.icon-btn .icon-text {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.icon-text a {
+  font-size: clamp(16px, 1.2vw + 4px, 22px);
+  color: #000;
+  text-decoration: none;
+}
+
+.mobile-search {
+  display: none;
+}
+
+/* Styling for the search input and icon container */
+.icon-btn.search {
+  position: relative;
+  width: clamp(200px, 15vw, 350px);
+  height: clamp(40px, 3.5vw, 50px);
+  background-color: #f3f4f7;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.icon-btn.search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: clamp(14px, 1vw + 4px, 18px);
+  color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.icon-btn.search input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.icon-btn.search svg {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(13px, 1vw + 2px, 16px);
+  color: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.icon-btn.search:focus-within {
+  background-color: #f3f4f7;
+}
+
+.icon-btn.search input:focus+svg {
+  color: #636262;
+}
+
+/* Style for the account icon */
+.icon-btn.acc {
+  display: flex;
+  align-items: center;
+  font-size: clamp(16px, 1.2vw + 4px, 22px);
+  gap: 6px;
+}
+
+.icon-btn.acc svg {
+  font-size: clamp(14px, 1.1vw + 2px, 18px);
+}
+
+/* Cart Icon Section */
+.icon-btn.cart {
+  display: flex;
+  align-items: center;
+  font-size: clamp(16px, 1.2vw + 4px, 22px);
+  position: relative;
+  gap: 6px;
+}
+
+.cart-icon {
+  font-size: clamp(14px, 1.1vw + 2px, 18px);
+  color: #444;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  left: 12px;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1200px) {
+  .navbar {
+    padding: 20px;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .desktop-search {
+    display: none;
+  }
+
+  .mobile-search {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-search .icon-btn.search {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .navbar {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    position: relative;
+    /* Context for absolute dropdown */
+  }
+
+  .hamburger-btn {
+    display: block;
+    order: 1;
+    justify-self: start;
+  }
+
+  .logo {
+    order: 2;
+    justify-self: center;
+  }
+
+  .icons {
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    order: 3;
+    justify-self: end;
+  }
+
+  .icon-btn.acc .icon-text,
+  .icon-btn.cart .icon-text {
+    display: none;
+  }
+
+  .icon-btn {
+    gap: 0;
+    /* Remove gap since text is hidden */
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    /* Stretch children to full width */
+    gap: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 20px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-items {
+    order: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left align watches/sunglasses/explore */
+    width: 100%;
+    padding: 0 30px;
+    gap: 20px;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    text-align: left;
+    /* Left align sub-items */
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+}

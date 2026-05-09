@@ -1,0 +1,280 @@
+.product_row {
+  margin-top: 0;
+  /* Remove any top margin from product row */
+}
+
+.productItem {
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  /* Center-align content */
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  /* Add spacing between items */
+  text-align: center;
+}
+
+.product_row {
+  display: flex;
+  justify-content: space-between;
+  /* Align items with spacing */
+  flex-wrap: wrap;
+  /* Ensure items wrap to the next row if necessary */
+}
+
+.productItem .badge {
+  padding: 7px 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  height: 30px;
+  width: 100px;
+  font-size: 15px;
+  background: rgb(238, 234, 234);
+  color: #000;
+}
+
+.productItem .actions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.productItem .actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  background: rgb(238, 234, 234)
+}
+
+
+.productItem .actions button svg {
+  font-size: 20px;
+  color: rgb(84, 82, 82);
+}
+
+.productItem .actions button:hover svg {
+  color: #eb4a4a;
+  /* Change color on hover */
+}
+
+.productItem .actions button:focus {
+  outline: none;
+  /* Ensure no outline appears when clicked */
+}
+
+.productItem:hover .actions {
+  opacity: 0.9;
+  /* Show when hovering over the product item */
+}
+
+.imgWrapper {
+  width: 100%;
+  /* Ensure the wrapper takes up full width */
+  height: 400px;
+  /* Set a fixed height for all images */
+  overflow: hidden;
+  /* Crop overflowing parts of images */
+  display: block;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imgWrapper img {
+  width: auto;
+  /* Maintain aspect ratio */
+  height: 100%;
+  /* Scale height to fit the wrapper */
+  object-fit: cover;
+  /* Ensures the image fits nicely without distortion */
+  border-radius: 12px;
+}
+
+
+.imgWrapper .quick-add {
+  position: absolute;
+  bottom: 0;
+  /* Position at the bottom of the image */
+  left: 0;
+  width: 100%;
+  /* Make it fill the entire width of the image */
+  height: 18%;
+  /* Height is 1/4th of the image height */
+  background-color: white;
+  /* White background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.3s ease;
+  /* Smooth transition */
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+  /* Optional shadow */
+}
+
+.imgWrapper:hover .quick-add {
+  opacity: 0.8;
+  /* Make it visible on hover */
+}
+
+.add-btn {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  /* Vertically align icon and text */
+
+}
+
+.add-btn svg {
+  margin-right: 8px;
+  /* Space between icon and text */
+  font-size: 17px;
+}
+
+.add-btn span {
+  font-size: 17px;
+  /* Increase font size */
+  font-weight: 300;
+  /* Make text bold */
+}
+
+.productItem {
+  text-align: left;
+  /* Make sure the product item container aligns content to the left */
+}
+
+.text-description {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 25px;
+  color: black !important;
+  font-family: "Inconsolata", monospace;
+  text-align: left;
+  /* Explicitly align text to the left */
+}
+
+.text-price {
+  display: inline-block;
+  margin-top: 5px;
+  padding-left: 10px;
+  font-family: "Inconsolata", monospace;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  /* Explicitly align text to the left */
+}
+
+.text-strikethrough {
+  margin-left: 15px;
+  color: gray;
+  font-size: 20px;
+  text-decoration: line-through;
+  text-align: left;
+  /* Align to the left */
+}
+
+.details {
+  margin-bottom: 5px;
+  font-family: "Inconsolata", monospace;
+  padding-left: 10px;
+  font-size: 20px;
+  color: #555;
+  text-align: left;
+  /* Explicitly align text to the left */
+}
+
+/* ---------------------------------------------------
+   PRODUCT GRID SPECIFIC RESPONSIVE OVERRIDES
+   --------------------------------------------------- */
+.product-grid .imgWrapper {
+  height: auto !important; /* Override the fixed 400px height */
+  aspect-ratio: 3 / 4; /* Use responsive aspect ratio */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-grid .imgWrapper img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+.product-grid .text-description {
+  font-size: clamp(16px, 1.5vw + 4px, 25px);
+}
+
+.product-grid .text-price,
+.product-grid .text-strikethrough {
+  font-size: clamp(14px, 1.2vw + 2px, 20px);
+}
+
+.product-grid .details {
+  font-size: clamp(12px, 1vw + 2px, 18px);
+}
+
+.product-grid .badge {
+  padding: clamp(4px, 1vw, 7px) clamp(8px, 1.5vw, 10px);
+  top: clamp(10px, 2vw, 20px);
+  left: clamp(10px, 2vw, 20px);
+  height: auto;
+  width: auto;
+  font-size: clamp(10px, 1vw + 2px, 15px);
+}
+
+.product-grid .actions {
+  top: clamp(10px, 2vw, 20px);
+  right: clamp(10px, 2vw, 20px);
+}
+
+.product-grid .actions button {
+  font-size: clamp(20px, 2vw + 5px, 30px);
+  padding: clamp(5px, 1vw, 8px);
+  border-radius: 50%;
+}
+
+.product-grid .actions button svg {
+  font-size: clamp(16px, 1.5vw + 4px, 20px);
+}
+
+.product-grid .add-btn span,
+.product-grid .add-btn svg {
+  font-size: clamp(14px, 1.2vw + 2px, 17px);
+}
+
+/* Mobile adjustments specifically for the new grid layout */
+@media screen and (max-width: 768px) {
+  .product-grid .actions {
+    opacity: 0.9; /* Always show heart on touch devices */
+  }
+
+  .product-grid .imgWrapper {
+    overflow: visible; /* Allows quick add button to sit below the image naturally */
+  }
+
+  .product-grid .quick-add {
+    position: static;
+    opacity: 1; /* Always visible */
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: 5px;
+    padding: 0;
+  }
+  
+  .product-grid .add-btn {
+    width: 100%;
+    background-color: #f5f5f5 !important;
+    border-radius: 8px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,54 @@
+/* Home Banner Section */
+.homeBannerSection {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.homeBannerSection * {
+  outline: none !important;
+}
+
+.homeBannerSection .item img {
+  width: 100%;
+  /* Scale to fit container */
+  height: 100%;
+  /* Maintain aspect ratio */
+  object-fit: contain;
+  /* Ensure the image covers the area */
+  padding: 15px;
+  border-radius: 30px !important;
+}
+
+/* Ensure Slick Dots are visible */
+.slick-dots {
+  display: block !important;
+  /* Override display property if hidden */
+  position: absolute;
+  bottom: 10px;
+  /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  background-color: #bdbaba;
+  /* Set background for dots */
+  border-radius: 100%;
+  width: 5px;
+  /* Set size of the dots */
+  height: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
