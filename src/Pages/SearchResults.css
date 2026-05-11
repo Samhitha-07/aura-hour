@@ -1,0 +1,90 @@
+.search-results-page {
+  padding: 40px clamp(15px, 3vw, 45px);
+  min-height: 60vh;
+  width: 100%;
+}
+
+.search-results-header {
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.search-results-title {
+  font-size: clamp(18px, 2.5vw + 4px, 32px);
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+}
+
+.search-query {
+  font-size: clamp(18px, 2.5vw + 4px, 32px);
+  font-weight: 600;
+  color: #000;
+  font-style: italic;
+}
+
+/* Fixed 5-column grid so items stay consistently sized */
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(15px, 2.5vw, 25px);
+}
+
+@media screen and (max-width: 1024px) {
+  .search-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* No results state */
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 8vw, 100px) 20px;
+  text-align: center;
+}
+
+.no-results-text {
+  font-size: clamp(14px, 1.5vw + 2px, 18px);
+  color: #666;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.search-suggestions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-suggestions span {
+  font-size: clamp(13px, 1.2vw + 2px, 16px);
+  color: #888;
+  font-weight: 500;
+}
+
+.search-suggestions a {
+  font-size: clamp(13px, 1.2vw + 2px, 16px);
+  color: #000;
+  text-decoration: none;
+  padding: 6px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.search-suggestions a:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
